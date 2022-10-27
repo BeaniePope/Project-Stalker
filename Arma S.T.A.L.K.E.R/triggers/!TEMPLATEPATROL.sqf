@@ -22,8 +22,9 @@ private _all_mutant_units = [""]
 
 
 
+for	"_i" from 1 to 4 do {
 
-_random_pos = floor random 250;
+_random_pos = [-300, 300] call BIS_fnc_randomInt;
 
 private _final_pos = [0, 0, 0];
 private _position_player = [0, 0, 0];
@@ -53,3 +54,4 @@ switch (_random_number) do
 _group_freedom_patrol move position player;
 
 
+};

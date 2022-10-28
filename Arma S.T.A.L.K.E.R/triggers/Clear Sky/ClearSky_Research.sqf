@@ -1,0 +1,1 @@
+private _all_clear_sky_units = ["B_ClearSky_ClearSky_Explorer_01", "B_ClearSky_ClearSky_guardian_01", "B_ClearSky_ClearSky_Researcher_01", "B_ClearSky_ClearSky_Scientist_01", "B_ClearSky_ClearSky_Scout_01"];

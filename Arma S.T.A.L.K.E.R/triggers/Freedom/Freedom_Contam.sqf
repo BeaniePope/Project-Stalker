@@ -1,0 +1,1 @@
+private _all_freedom_units = ["B_FRD_Freedomer_Patrolman_01","B_FRD_Freedomer_Sniper_01", "B_FRD_Freedomer_Exo_1", "B_FRD_Freedomer_Warrior_01", "B_FRD_Freedomer_SEVA_01", "B_FRD_Freedomer_Gaurdian_01", "B_FRD_Freedomer_Seva_II_01"];

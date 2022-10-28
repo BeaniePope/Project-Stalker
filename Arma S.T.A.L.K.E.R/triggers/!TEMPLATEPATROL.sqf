@@ -22,22 +22,26 @@ private _all_mutant_units = [""]
 
 
 
-for	"_i" from 1 to 4 do {
 
-_random_pos = [-300, 300] call BIS_fnc_randomInt;
+
+_random_pos = [-600, 200] call BIS_fnc_randomInt;
 
 private _final_pos = [0, 0, 0];
 private _position_player = [0, 0, 0];
 _position_player = getPos player;
 _position_player_x = _position_player select 0;
 _position_player_y = _position_player select 1;
-_final_pos set [0 , _position_player_x + 150 + _random_pos];
-_final_pos set [1 , _position_player_y + 150 + _random_pos];
+_final_pos set [0 , _position_player_x + 200 + _random_pos];
+_final_pos set [1 , _position_player_y + 200 + _random_pos];
+
+
+
 
 _position = _final_pos;   
    
 _group_freedom_patrol = createGroup [west, true];  
 
+hint str _final_pos select 0;
 
 _random_number = floor random 5;
 
@@ -54,4 +58,3 @@ switch (_random_number) do
 _group_freedom_patrol move position player;
 
 
-};

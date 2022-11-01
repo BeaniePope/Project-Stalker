@@ -2,6 +2,10 @@
 
 _random_pos = floor random 250;
 
+_view_direction = getCameraViewDirection player
+
+
+
 private _final_pos = [0, 0, 0];
 private _position_player = [0, 0, 0];
 _position_player = getPos player;

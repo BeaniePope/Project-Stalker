@@ -19,12 +19,20 @@ private _all_army_units = ["I_UKRState_Security_Service_Anomalous_Autorifleman_0
 private _all_mutant_units = [""]
 
 
+/* 0 degrees is 0, 1, 0 (Facing north)
+180 is 1, 1, 0 (Facing South)
+250 1, 0, 0 (Facing West) 
+90 1, 0, 0 (Facing East)
+320 .5, .5, 0 (Facing NW)
+40 .5, .5, 0 (Facing NE)
+140 .5, .5, 0 (Facing SE)
+220 .5, .5. 0 (Facing SW)
+*/
 
 
 
 
-
-_random_pos = [-600, 200] call BIS_fnc_randomInt;
+/*_random_pos = [0, 300] call BIS_fnc_randomInt;
 
 private _final_pos = [0, 0, 0];
 private _position_player = [0, 0, 0];
@@ -35,7 +43,32 @@ _final_pos set [0 , _position_player_x + 200 + _random_pos];
 _final_pos set [1 , _position_player_y + 200 + _random_pos];
 
 
+*/
 
+private _final_pos = [0,0,0];
+private _position_player = [0, 0, 0];
+_direction = getDir player;
+if (_direction > 0 and _direction < 90) then {cardinal_direction = "North";};
+if (_direction > 90 and _direction < 180) then {cardinal_direction = "South";};
+if (_direction > 180 and _direction < 250) then{cardinal_direction = "South";};
+if (_direction > 250 and _direction < 359) then{cardinal_direction = "North";};
+
+_position_player = getPos player;
+_position_player_x =  _position_player select 0;
+_position_player_y =  _position_player select 1;
+
+if (cardinal_direction == "North") then{ 
+	_random_x = [250, 500] call BIS_fnc_randomInt;
+	_random_y = [250, 500] call BIS_fnc_randomInt;
+	_final_pos set [0 , _position_player_x + 200 + _random_x];
+	_final_pos set [1 , _position_player_y + 200 + _random_y];
+};
+if (cardinal_direction == "South") then{
+	_random_x = [-250, -500] call BIS_fnc_randomInt;
+	_random_y = [-250, -500] call BIS_fnc_randomInt;
+	_final_pos set [0 , _position_player_x + _random_x];
+	_final_pos set [1 , _position_player_y + _random_y];
+};
 
 _position = _final_pos;   
    
@@ -45,7 +78,7 @@ hint str _final_pos select 0;
 
 _random_number = floor random 5;
 
-switch (_random_number) do
+switch (_random_number) do // Generally for animals, patrols aren't usually randomized
 {
 	case 1: {for "_i" from 1 to 3 do { _unit = _group_freedom_patrol createUnit [_all_freedom_units select 0, _position, [], 0, "FORM"]; }; };
 	case 2: {for "_i" from 1 to 2 do { _unit = _group_freedom_patrol createUnit [_all_freedom_units select 1, _position, [], 0, "FORM"]; }; };
@@ -55,6 +88,8 @@ switch (_random_number) do
 }; 
 
 
+
+//---------- Patrol Only
 _group_freedom_patrol move position player;
 
 

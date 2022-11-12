@@ -14,9 +14,9 @@ private _all_ecologist_units = ["I_ECO_ECO_Contracter_01", "I_ECO_Ecologist_Gaur
 
 private _all_loner_units = ["I_LN_Loner_Adventurer_01", "I_LN_Loner_Artifact_Hunter_01", "I_LN_Loner_Begger_01", "I_LN_Loner_Exo_01", "I_LN_Loner_Explorer_01", "I_LN_Loner_Hunter_01", "I_LN_Loner_Scavenger_01"];
 
-private _all_army_units = ["I_UKRState_Security_Service_Anomalous_Autorifleman_01", "I_UKRState_Security_Service_Anomalous_Medic_01", "I_UKRState_Security_Service_Anomalous_Rifleman_01", "I_UKRState_Security_Service_Military_Autoriflemen_01". "I_UKRState_Security_Service_Military_Medic_01", "I_UKRState_Security_Service_Military_Officer_01", "I_UKRState_Security_Service_Military_Rifleman_01", "I_UKRState_Security_Service_Military_Scout_01"]
+private _all_army_units = ["I_UKRState_Security_Service_Anomalous_Autorifleman_01", "I_UKRState_Security_Service_Anomalous_Medic_01", "I_UKRState_Security_Service_Anomalous_Rifleman_01", "I_UKRState_Security_Service_Military_Autoriflemen_01". "I_UKRState_Security_Service_Military_Medic_01", "I_UKRState_Security_Service_Military_Officer_01", "I_UKRState_Security_Service_Military_Rifleman_01", "I_UKRState_Security_Service_Military_Scout_01"];
 
-private _all_mutant_units = [""]
+private _all_mutant_units = [""];
 
 
 /* 0 degrees is 0, 1, 0 (Facing north)
@@ -60,8 +60,8 @@ _position_player_y =  _position_player select 1;
 if (cardinal_direction == "North") then{ 
 	_random_x = [250, 500] call BIS_fnc_randomInt;
 	_random_y = [250, 500] call BIS_fnc_randomInt;
-	_final_pos set [0 , _position_player_x + 200 + _random_x];
-	_final_pos set [1 , _position_player_y + 200 + _random_y];
+	_final_pos set [0 , _position_player_x  + _random_x];
+	_final_pos set [1 , _position_player_y  + _random_y];
 };
 if (cardinal_direction == "South") then{
 	_random_x = [-250, -500] call BIS_fnc_randomInt;
@@ -86,6 +86,9 @@ switch (_random_number) do // Generally for animals, patrols aren't usually rand
 	case 4: {for "_i" from 1 to 3 do { _unit = _group_freedom_patrol createUnit [_all_freedom_units select 3, _position, [], 0, "FORM"]; }; };
 	case 5: {for "_i" from 1 to 1 do { _unit = _group_freedom_patrol createUnit [_all_freedom_units select 4, _position, [], 0, "FORM"]; }; };
 }; 
+
+
+
 
 
 

@@ -12,7 +12,6 @@ _position = _final_pos;
    
 _group_freedom_patrol = createGroup [west, true];  
 
-_random_number = floor random 5; 
 for "_i" from 1 to 4 do { _unit = _group_freedom_patrol createUnit [_all_freedom_units select 0, _position, [], 0, "FORM"]; };
 
 _group_freedom_patrol move position player; 

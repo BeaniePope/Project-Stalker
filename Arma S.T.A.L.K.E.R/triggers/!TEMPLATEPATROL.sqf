@@ -76,6 +76,11 @@ _group_freedom_patrol = createGroup [west, true];
 
 hint str _final_pos select 0;
 
+//Standard spawn patrol code
+for "_i" from 1 to 3 do { _unit = _group_freedom_patrol createUnit [_all_freedom_units select 0, _position, [], 0, "FORM"];
+
+
+
 _random_number = floor random 5;
 
 switch (_random_number) do // Generally for animals, patrols aren't usually randomized
@@ -88,6 +93,13 @@ switch (_random_number) do // Generally for animals, patrols aren't usually rand
 }; 
 
 
+//Script for specialized location 
+
+
+
+//Script for spawning in compositions
+
+_group_loner_safezone = createGroup [independent, true];
 
 
 

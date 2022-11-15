@@ -4,6 +4,8 @@ Arma 3 STALKER project for my Arma Server
 
 Hey! This code is not made to be built, I'm using github to cloud store the scripting files for various systems within the game to make my life easier down the line
 
+EDIT: This code now contains all files required to build the STALKER ZEUS Scenario
+
 There are many required mods for this to all run properly within Arma, and if you stumble upon this project be wary that unless I have published a collection that I will list below
 many of the trigger scripts or the reputation script will not work
 

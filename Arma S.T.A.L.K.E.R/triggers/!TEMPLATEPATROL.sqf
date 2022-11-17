@@ -98,11 +98,7 @@ switch (_random_number) do // Generally for animals, patrols aren't usually rand
 
 
 //Script for spawning in compositions
-
-_group_loner_safezone = createGroup [independent, true];
-
-
-
+_compReference = [ COMP_NAME, POS_ATL, OFFSET, DIR, ALIGN_TERRAIN, ALIGN_WATER, IGNORE_ATLOFFSET ] call LARs_fnc_spawnComp;
 
 //---------- Patrol Only
 _group_freedom_patrol move position player;

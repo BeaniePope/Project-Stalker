@@ -2,3 +2,5 @@ private _all_loner_units = ["I_LN_Loner_Adventurer_01", "I_LN_Loner_Artifact_Hun
 
 _group_loner_safezone = createGroup [independent, true];
 
+_compLonerHQ = ["lonerHQ"] call LARs_fnc_spawnComp;
+

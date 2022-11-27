@@ -6,5 +6,19 @@ _reputation_Military = 0;
 _reputation_Merc = 1;
 _reputation_Eco = 1;
 
+_trigger_name =
 
-private class reputation 
+while (1 == 1)
+{
+	call check;
+}
+
+check  = {
+	if (call unit_killed == true) then {
+
+	}
+};
+
+unit_killed = {
+
+}
